@@ -1219,7 +1219,7 @@ exports.merge = function (arr) {
 };
 
 });
-require.register("powerange/lib/powerange.js", function(exports, require, module){
+require.register("powerange2/lib/powerange2.js", function(exports, require, module){
 /**
  * Require classes.
  */
@@ -1249,7 +1249,7 @@ var defaults = {
 };
 
 /**
- * Expose proper type of `Powerange`.
+ * Expose proper type of `Powerange2`.
  */
 
 module.exports = function(element, options) {
@@ -1268,7 +1268,7 @@ module.exports = function(element, options) {
   }
 };
 });
-require.register("powerange/lib/main.js", function(exports, require, module){
+require.register("powerange2/lib/main.js", function(exports, require, module){
 /**
  * External dependencies.
  *
@@ -1280,13 +1280,13 @@ var mouse = require('mouse')
   , percentage = require('percentage-calc');
 
 /**
- * Expose `Powerange`.
+ * Expose `Powerange2`.
  */
 
-module.exports = Powerange;
+module.exports = Powerange2;
 
 /**
- * Create Powerange object.
+ * Create Powerange2 object.
  *
  * @constructor
  * @param {Object} element
@@ -1294,8 +1294,8 @@ module.exports = Powerange;
  * @api public
  */
 
-function Powerange(element, options) {
-  if (!(this instanceof Powerange)) return new Powerange(element, options);
+function Powerange2(element, options) {
+  if (!(this instanceof Powerange2)) return new Powerange2(element, options);
 
   this.element = element;
   this.options = options || {};
@@ -1310,7 +1310,7 @@ function Powerange(element, options) {
  * @api private
  */
 
-Powerange.prototype.bindEvents = function () {
+Powerange2.prototype.bindEvents = function () {
   this.handle = this.slider.querySelector('.range-handle');
   this.touch = events(this.handle, this);
   this.touch.bind('touchstart', 'onmousedown');
@@ -1326,7 +1326,7 @@ Powerange.prototype.bindEvents = function () {
  * @api private
  */
 
-Powerange.prototype.hide = function() {
+Powerange2.prototype.hide = function() {
   this.element.style.display = 'none';
 };
 
@@ -1336,7 +1336,7 @@ Powerange.prototype.hide = function() {
  * @api private
  */
 
-Powerange.prototype.append = function() {
+Powerange2.prototype.append = function() {
   var slider = this.generate();
   this.insertAfter(this.element, slider);
 };
@@ -1348,7 +1348,7 @@ Powerange.prototype.append = function() {
  * @api private
  */
 
-Powerange.prototype.generate = function() {
+Powerange2.prototype.generate = function() {
   var elems = {
       'handle': {
           'type': 'span'
@@ -1387,7 +1387,7 @@ Powerange.prototype.generate = function() {
  * @api private
  */
 
-Powerange.prototype.create = function(type, name) {
+Powerange2.prototype.create = function(type, name) {
   var elem = document.createElement(type);
   elem.className = name;
 
@@ -1402,7 +1402,7 @@ Powerange.prototype.create = function(type, name) {
  * @api private
  */
 
-Powerange.prototype.insertAfter = function(reference, target) {
+Powerange2.prototype.insertAfter = function(reference, target) {
   reference.parentNode.insertBefore(target, reference.nextSibling);
 };
 
@@ -1413,7 +1413,7 @@ Powerange.prototype.insertAfter = function(reference, target) {
  * @api private
  */
 
-Powerange.prototype.extraClass = function(klass) {
+Powerange2.prototype.extraClass = function(klass) {
   if (this.options.klass) classes(this.slider).add(klass);
 };
 
@@ -1425,7 +1425,7 @@ Powerange.prototype.extraClass = function(klass) {
  * @api private
  */
 
-Powerange.prototype.setRange = function(min, max) {
+Powerange2.prototype.setRange = function(min, max) {
   if (typeof min === 'number' && typeof max === 'number' && !this.options.hideRange) {
     this.slider.querySelector('.range-min').innerHTML = min;
     this.slider.querySelector('.range-max').innerHTML = max;
@@ -1440,7 +1440,7 @@ Powerange.prototype.setRange = function(min, max) {
  * @api private
  */
 
-Powerange.prototype.setValue = function (offset, size) {
+Powerange2.prototype.setValue = function (offset, size) {
   var part = percentage.from(parseFloat(offset), size)
     , value = percentage.of(part, this.options.max - this.options.min) + this.options.min
     , changed = false;
@@ -1462,7 +1462,7 @@ Powerange.prototype.setValue = function (offset, size) {
  * @api private
  */
 
-Powerange.prototype.step = function(sliderSize, handleSize) {
+Powerange2.prototype.step = function(sliderSize, handleSize) {
   var dimension = sliderSize - handleSize
     , part = percentage.from(this.checkStep(this.options.step), this.options.max - this.options.min)
     , interval = percentage.of(part, dimension)
@@ -1484,7 +1484,7 @@ Powerange.prototype.step = function(sliderSize, handleSize) {
  * @api private
  */
 
-Powerange.prototype.checkValues = function(start) {
+Powerange2.prototype.checkValues = function(start) {
   if (start < this.options.min) this.options.start = this.options.min;
   if (start > this.options.max) this.options.start = this.options.max;
   if (this.options.min >= this.options.max) this.options.min = this.options.max;
@@ -1498,7 +1498,7 @@ Powerange.prototype.checkValues = function(start) {
  * @api private
  */
 
-Powerange.prototype.checkStep = function(value) {
+Powerange2.prototype.checkStep = function(value) {
   if (value < 0) value = Math.abs(value);
   this.options.step = value;
   return this.options.step;
@@ -1510,7 +1510,7 @@ Powerange.prototype.checkStep = function(value) {
  * @api private
  */
 
-Powerange.prototype.disable = function() {
+Powerange2.prototype.disable = function() {
   if (this.options.min == this.options.max || this.options.min > this.options.max || this.options.disable) {
     this.mouse.unbind();
     this.touch.unbind();
@@ -1527,7 +1527,7 @@ Powerange.prototype.disable = function() {
  * @api private
  */
 
-Powerange.prototype.unselectable = function(element, set) {
+Powerange2.prototype.unselectable = function(element, set) {
   if (!classes(this.slider).has('unselectable') && set === true) {
     classes(this.slider).add('unselectable');
   } else {
@@ -1542,7 +1542,7 @@ Powerange.prototype.unselectable = function(element, set) {
  * @api private
  */
 
-Powerange.prototype.changeEvent = function(state) {
+Powerange2.prototype.changeEvent = function(state) {
   if (typeof Event === 'function' || !document.fireEvent) {
     var event = document.createEvent('HTMLEvents');
     event.initEvent('change', false, true);
@@ -1558,7 +1558,7 @@ Powerange.prototype.changeEvent = function(state) {
  * @api private
  */
 
-Powerange.prototype.init = function() {
+Powerange2.prototype.init = function() {
   this.hide();
   this.append();
   this.bindEvents();
@@ -1569,7 +1569,7 @@ Powerange.prototype.init = function() {
 };
 
 });
-require.register("powerange/lib/horizontal.js", function(exports, require, module){
+require.register("powerange2/lib/horizontal.js", function(exports, require, module){
 /**
  * External dependencies.
  *
@@ -1583,7 +1583,7 @@ var inherits = require('super')
  * Require main class.
  */
 
-var Powerange = require('./main');
+var Powerange2 = require('./main');
 
 /**
  * Expose `Horizontal`.
@@ -1598,7 +1598,7 @@ module.exports = Horizontal;
  */
 
 function Horizontal() {
-  Powerange.apply(this, arguments);
+  Powerange2.apply(this, arguments);
   if (this.options.step) this.step(this.slider.offsetWidth, this.handle.offsetWidth);
   this.setStart(this.options.start);
 }
@@ -1607,7 +1607,7 @@ function Horizontal() {
  * Inherit the main class.
  */
 
-inherits(Horizontal, Powerange);
+inherits(Horizontal, Powerange2);
 
 /**
  * Set horizontal slider position.
@@ -1689,7 +1689,7 @@ Horizontal.prototype.onmouseup = function(e) {
   this.unselectable(this.slider, false);
 };
 });
-require.register("powerange/lib/vertical.js", function(exports, require, module){
+require.register("powerange2/lib/vertical.js", function(exports, require, module){
 /**
  * External dependencies.
  *
@@ -1704,7 +1704,7 @@ var inherits = require('super')
  * Require main class.
  */
 
-var Powerange = require('./main');
+var Powerange2 = require('./main');
 
 /**
  * Expose `Vertical`.
@@ -1719,7 +1719,7 @@ module.exports = Vertical;
  */
 
 function Vertical() {
-  Powerange.apply(this, arguments);
+  Powerange2.apply(this, arguments);
   classes(this.slider).add('vertical');
   if (this.options.step) this.step(this.slider.offsetHeight, this.handle.offsetHeight);
   this.setStart(this.options.start);
@@ -1729,7 +1729,7 @@ function Vertical() {
  * Inherit the main class.
  */
 
-inherits(Vertical, Powerange);
+inherits(Vertical, Powerange2);
 
 /**
  * Set vertical slider position.
@@ -1825,7 +1825,7 @@ Vertical.prototype.onmouseup = function(e) {
 
 
 
-require.alias("component-events/index.js", "powerange/deps/events/index.js");
+require.alias("component-events/index.js", "powerange2/deps/events/index.js");
 require.alias("component-events/index.js", "events/index.js");
 require.alias("component-event/index.js", "component-events/deps/event/index.js");
 
@@ -1838,32 +1838,32 @@ require.alias("component-query/index.js", "component-matches-selector/deps/query
 require.alias("discore-closest/index.js", "discore-closest/index.js");
 require.alias("component-event/index.js", "component-delegate/deps/event/index.js");
 
-require.alias("component-classes/index.js", "powerange/deps/classes/index.js");
+require.alias("component-classes/index.js", "powerange2/deps/classes/index.js");
 require.alias("component-classes/index.js", "classes/index.js");
 require.alias("component-indexof/index.js", "component-classes/deps/indexof/index.js");
 
-require.alias("ui-component-mouse/index.js", "powerange/deps/mouse/index.js");
+require.alias("ui-component-mouse/index.js", "powerange2/deps/mouse/index.js");
 require.alias("ui-component-mouse/index.js", "mouse/index.js");
 require.alias("component-emitter/index.js", "ui-component-mouse/deps/emitter/index.js");
 
 require.alias("component-event/index.js", "ui-component-mouse/deps/event/index.js");
 
-require.alias("abpetkov-percentage-calc/percentage-calc.js", "powerange/deps/percentage-calc/percentage-calc.js");
-require.alias("abpetkov-percentage-calc/percentage-calc.js", "powerange/deps/percentage-calc/index.js");
+require.alias("abpetkov-percentage-calc/percentage-calc.js", "powerange2/deps/percentage-calc/percentage-calc.js");
+require.alias("abpetkov-percentage-calc/percentage-calc.js", "powerange2/deps/percentage-calc/index.js");
 require.alias("abpetkov-percentage-calc/percentage-calc.js", "percentage-calc/index.js");
 require.alias("abpetkov-percentage-calc/percentage-calc.js", "abpetkov-percentage-calc/index.js");
-require.alias("abpetkov-closest-num/closest-num.js", "powerange/deps/closest-num/closest-num.js");
-require.alias("abpetkov-closest-num/closest-num.js", "powerange/deps/closest-num/index.js");
+require.alias("abpetkov-closest-num/closest-num.js", "powerange2/deps/closest-num/closest-num.js");
+require.alias("abpetkov-closest-num/closest-num.js", "powerange2/deps/closest-num/index.js");
 require.alias("abpetkov-closest-num/closest-num.js", "closest-num/index.js");
 require.alias("abpetkov-closest-num/closest-num.js", "abpetkov-closest-num/index.js");
-require.alias("vesln-super/lib/super.js", "powerange/deps/super/lib/super.js");
-require.alias("vesln-super/lib/super.js", "powerange/deps/super/index.js");
+require.alias("vesln-super/lib/super.js", "powerange2/deps/super/lib/super.js");
+require.alias("vesln-super/lib/super.js", "powerange2/deps/super/index.js");
 require.alias("vesln-super/lib/super.js", "super/index.js");
 require.alias("vesln-super/lib/super.js", "vesln-super/index.js");
-require.alias("powerange/lib/powerange.js", "powerange/index.js");if (typeof exports == "object") {
-  module.exports = require("powerange");
+require.alias("powerange2/lib/powerange2.js", "powerange2/index.js");if (typeof exports == "object") {
+  module.exports = require("powerange2");
 } else if (typeof define == "function" && define.amd) {
-  define([], function(){ return require("powerange"); });
+  define([], function(){ return require("powerange2"); });
 } else {
-  this["Powerange"] = require("powerange");
+  this["Powerange2"] = require("powerange2");
 }})();

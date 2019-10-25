@@ -1,25 +1,28 @@
 {
-    "name": "powerange"
-  , "main": "dist/powerange.js"
-  , "version": "0.0.4"
-  , "description": "iOS 7 style range slider"
-  , "keywords": [
-        "range"
-      , "slider"
-      , "iOS7"
-    ]
-  , "authors": [
-      "Alexander Petkov <abpetkov@gmail.com> (https://github.com/abpetkov)"
-    ]
-  , "homepage": "https://abpetkov.github.io/powerange"
-  , "license": "MIT"
-  , "ignore": [
-        "**/.*"
-      , "build"
-      , "components"
-      , "node_modules"
-      , "bower_components"
-      , "example"
-      , "component.json"
-    ]
+  "name": "powerange2",
+  "main": "dist/powerange2.js",
+  "version": "0.0.4",
+  "description": "iOS 7 style range slider",
+  "keywords": [
+    "range",
+    "slider",
+    "iOS7"
+  ],
+  "authors": [
+    "Alexander Petkov <abpetkov@gmail.com> (https://github.com/abpetkov)"
+  ],
+  "contributors": [
+    "Tema Smirnov <npm.tema@smirnov.one> (https://github.com/TemaSM)"
+  ],
+  "homepage": "https://temasm.github.io/powerange2",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "build",
+    "components",
+    "node_modules",
+    "bower_components",
+    "example",
+    "component.json"
+  ]
 }

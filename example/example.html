@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>Powerange - iOS 7 style range slider</title>
-  <link rel="stylesheet" href="http://abpetkov.github.io/powerange/stylesheets/demo.css" />
+  <title>Powerange2 - iOS 7 style range slider</title>
+  <link rel="stylesheet" href="http://temasm.github.io/powerange2/stylesheets/demo.css" />
   <link rel="stylesheet" href="../build/build.css" />
   <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet" type="text/css" />
@@ -15,33 +15,29 @@
   <div class="container">
 
     <header class="header box clearfix">
-      <h1>Powerange</h1>
+      <h1>Powerange2</h1>
       <div class="slogan">iOS 7 style range slider</div>
     </header>
 
     <section class="author clearfix">
       <span>Follow me:</span>
-      <a class="twitter box" href="https://twitter.com/abpetkov" target="_blank">@abpetkov</a>
-      <a class="github box" href="https://github.com/abpetkov" target="_blank">abpetkov</a>
-      <a class="dribbble box" href="http://dribbble.com/apetkov" target="_blank">apetkov</a>
+      <a class="github box" href="https://github.com/TemaSM" target="_blank">TemaSM</a>
     </section>
 
     <section class="content">
 
       <div class="box">
-        <h2>About Powerange</h2>
+        <h2>About Powerange2</h2>
 
         <p>
-          Powerange is a range slider control, inspired heavily by iOS 7 and the "Power Rangers" TV series. It is easily customizable, both by CSS and JavaScript. With it's many features, including changing color and overall style, switching between horizontal and vertical style, custom min, max and start values, custom step interval, displaying decimal values, displaying icons instead of min/max numbers, it is a really powerful UI tool to use on your website.
+          Powerange2 is a range slider control, inspired heavily by iOS 7 and the "Power Rangers" TV series. It is easily customizable, both by CSS and JavaScript. With it's many features, including changing color and overall style, switching between horizontal and vertical style, custom min, max and start values, custom step interval, displaying decimal values, displaying icons instead of min/max numbers, it is a really powerful UI tool to use on your website.
         </p>
 
         <p>A great cross-browser solution, supporting: Google Chrome 14+, Mozilla Firefox 6.0+, Opera 11.6+, Safari 5+, IE 9+</p>
 
         <p>Licensed under <a href="http://opensource.org/licenses/MIT" target="_blank">The MIT License</a>.</p>
 
-        <p>If you like this module and you're a fan of iOS 7 style UI widgets, check out <a href="http://abpetkov.github.io/switchery/" target="_blank">Switchery</a>.</p>
-
-        <a href="https://github.com/abpetkov/powerange" target="_blank" class="button star-button">
+        <a href="https://github.com/temasm/powerange2" target="_blank" class="button star-button">
           <span class="star-icon"></span>
           Star the GitHub repo
         </a>
@@ -54,26 +50,18 @@
 
         <pre>
           <div class="tag">
-            &lt;link <span class="attribute">rel=</span><span class="value">&quot;stylesheet&quot;</span> <span class="attribute">href=</span><span class="value">&quot;dist/powerange.css&quot;</span> /&gt;
+            &lt;link <span class="attribute">rel=</span><span class="value">&quot;stylesheet&quot;</span> <span class="attribute">href=</span><span class="value">&quot;dist/powerange2.css&quot;</span> /&gt;
           </div>
           <div class="tag">
-            &lt;script <span class="attribute">src=</span><span class="value">&quot;dist/powerange.js&quot;</span>&gt;&lt;/script&gt;
+            &lt;script <span class="attribute">src=</span><span class="value">&quot;dist/powerange2.js&quot;</span>&gt;&lt;/script&gt;
           </div>
         </pre>
 
-        <h3>Component</h3>
+        <h3>npm</h3>
 
         <pre>
           <div class="script">
-            $ component install abpetkov/powerange
-          </div>
-        </pre>
-
-        <h3>Bower</h3>
-
-        <pre>
-          <div class="script">
-            $ bower install powerange
+            $ npm install -S powerange2
           </div>
         </pre>
       </div>
@@ -83,8 +71,8 @@
 
         <pre>
           <div class="script">
-            <div><span class="specials">var</span> elem <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-range'</span>);</div>
-            <div><span class="specials">var</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange</span>(elem);</div>
+            <div><span class="specials">const</span> elem <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-range'</span>)</div>
+            <div><span class="specials">const</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange2</span>(elem)</div>
           </div>
         </pre>
 
@@ -157,7 +145,7 @@
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange</span>(elem, { min: <span class="boolean">16</span>, max: <span class="boolean">256</span>, start: <span class="boolean">128</span> });</div>
+              <div><span class="specials">const</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange2</span>(elem, { min: <span class="boolean">16</span>, max: <span class="boolean">256</span>, start: <span class="boolean">128</span> })</div>
             </div>
           </pre>
 
@@ -173,7 +161,7 @@
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange</span>(elem, { decimal: <span class="boolean">true</span> });</div>
+              <div><span class="specials">const</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange2</span>(elem, { decimal: <span class="boolean">true</span> })</div>
             </div>
           </pre>
 
@@ -191,7 +179,7 @@
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange</span>(elem, { step: <span class="boolean">10</span> });</div>
+              <div><span class="specials">const</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange2</span>(elem, { step: <span class="boolean">10</span> })</div>
             </div>
           </pre>
 
@@ -207,7 +195,7 @@
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange</span>(elem, { hideRange: <span class="boolean">true</span> });</div>
+              <div><span class="specials">const</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange2</span>(elem, { hideRange: <span class="boolean">true</span> })</div>
             </div>
           </pre>
 
@@ -223,7 +211,7 @@
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange</span>(elem, { disable: <span class="boolean">true</span>, disabledOpacity: <span class="boolean">0.75</span> });</div>
+              <div><span class="specials">const</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange2</span>(elem, { disable: <span class="boolean">true</span>, disabledOpacity: <span class="boolean">0.75</span> })</div>
             </div>
           </pre>
 
@@ -235,11 +223,11 @@
         <div class="example">
           <h3>Horizontal and vertical slider</h3>
 
-          <p>The default Powerange slider is horizontal. However, you can make it vertical, by setting <strong>vertical: true</strong>.</p>
+          <p>The default Powerange2 slider is horizontal. However, you can make it vertical, by setting <strong>vertical: true</strong>.</p>
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange</span>(elem, { vertical: <span class="boolean">true</span> });</div>
+              <div><span class="specials">const</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange2</span>(elem, { vertical: <span class="boolean">true</span> })</div>
             </div>
           </pre>
 
@@ -257,12 +245,12 @@
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> clickInput <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-check-click'</span>)</div>
+              <div><span class="specials">const</span> clickInput <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-check-click'</span>)</div>
               <div>&nbsp;&nbsp;, clickButton <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-check-click-button'</span>)</div>
               <br />
               <div>clickButton.addEventListener(<span class="value">'click'</span>, <span class="specials">function</span>() {</div>
-              <div>&nbsp;&nbsp;<span class="single">alert</span>(clickInput.<span class="boolean">value</span>);</div>
-              <div>});</div>
+              <div>&nbsp;&nbsp;<span class="single">alert</span>(clickInput.<span class="boolean">value</span>)</div>
+              <div>})</div>
             </div>
           </pre>
 
@@ -275,7 +263,7 @@
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> changeInput <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-check-change'</span>);</div>
+              <div><span class="specials">const</span> changeInput <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-check-change'</span>)</div>
               <br />
               <div><span class="single">changeInput</span>.<span class="name">onchange</span> = <span class="specials">function</span>() {</div>
               <div>&nbsp;&nbsp;<span class="single">document</span>.<span class="specials">getElementById</span>(<span class="value">'js-display-change'</span>).innerHTML = changeInput.<span class="boolean">value</span>;</div>
@@ -298,8 +286,8 @@
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> elem <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-range'</span>);</div>
-              <div><span class="specials">var</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange</span>(elem);</div>
+              <div><span class="specials">const</span> elem <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-range'</span>)</div>
+              <div><span class="specials">const</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange2</span>(elem)</div>
               <br />
               <div><span class="specials">function</span> <span class="name">displayValue</span>() {</div>
                 <div>&nbsp;&nbsp;<span class="single">document</span>.<span class="specials">getElementById</span>(<span class="value">'display-box'</span>).innerHTML = elem.<span class="boolean">value</span>;</div>
@@ -321,8 +309,8 @@
 
           <pre>
             <div class="script">
-              <div><span class="specials">var</span> elem <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-range'</span>);</div>
-              <div><span class="specials">var</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange</span>(elem, { callback: setOpacity, decimal: <span class="boolean">true</span>, min: <span class="boolean">0</span>, max: <span class="boolean">1</span>, start: <span class="boolean">1</span> });</div>
+              <div><span class="specials">const</span> elem <span class="sign">=</span> <span class="single">document</span>.querySelector(<span class="value">'.js-range'</span>)</div>
+              <div><span class="specials">const</span> init <span class="sign">=</span> <span class="sign">new</span> <span class="name">Powerange2</span>(elem, { callback: setOpacity, decimal: <span class="boolean">true</span>, min: <span class="boolean">0</span>, max: <span class="boolean">1</span>, start: <span class="boolean">1</span> })</div>
               <br />
               <div><span class="specials">function</span> <span class="name">setOpacity</span>() {</div>
                 <div>&nbsp;&nbsp;<span class="single">document</span>.querySelector(<span class="value">'.js-change-opacity'</span>).<span class="boolean">style</span>.opacity = elem.<span class="boolean">value</span>;</div>
@@ -354,7 +342,7 @@
 
         <pre>
           <div class="script">
-            <span class="specials">var</span> Powerange <span class="sign">=</span> require(<span class="value">'powerange'</span>);
+            <span class="specials">const</span> Powerange2 <span class="sign">=</span> require(<span class="value">'powerange2'</span>)
           </div>
         </pre>
 
@@ -376,16 +364,14 @@
     <footer class="footer box clearfix">
       <div class="left">
         <ul>
-          <li><a href="https://github.com/abpetkov/powerange/issues" target="_blank">Submit an issue</a></li> /
-          <li><a href="https://github.com/abpetkov/powerange" target="_blank">View on GitHub</a></li>
+          <li><a href="https://github.com/temasm/powerange2/issues" target="_blank">Submit an issue</a></li> /
+          <li><a href="https://github.com/temasm/powerange2" target="_blank">View on GitHub</a></li>
         </ul>
       </div>
       <div class="right">
         <span>Follow me:</span>
-        <a class="twitter" href="https://twitter.com/abpetkov" target="_blank">@abpetkov</a>
-        <a class="github" href="https://github.com/abpetkov" target="_blank">abpetkov</a>
-        <a class="dribbble" href="http://dribbble.com/apetkov" target="_blank">apetkov</a>
-        <div class="copyright">Copyright &copy; 2014 Alexander Petkov</div>
+        <a class="github" href="https://github.com/TemaSM" target="_blank">TemaSM</a>
+        <div class="copyright">Copyright &copy; 2019 Artem Smirnov</div>
       </div>
     </footer>
 
@@ -394,72 +380,72 @@
   <script src="../build/build.js"></script>
   <script type="text/javascript">
 
-    var Powerange = require('powerange');
+    const Powerange2 = require('powerange2')
 
     // Basic customization.
-    var cust = document.querySelector('.js-customized');
-    var initCust = new Powerange(cust, { hideRange: true, klass: 'power-ranger', start: 60 });
+    const cust = document.querySelector('.js-customized')
+    const initCust = new Powerange2(cust, { hideRange: true, klass: 'power-ranger', start: 60 })
 
     // Min, max, start.
-    var vals = document.querySelector('.js-min-max-start');
-    var initVals = new Powerange(vals, { min: 16, max: 256, start: 128 });
+    const vals = document.querySelector('.js-min-max-start')
+    const initVals = new Powerange2(vals, { min: 16, max: 256, start: 128 })
 
     // Decimal.
-    var dec = document.querySelector('.js-decimal');
-    var initDec = new Powerange(dec, { decimal: true, callback: displayDecimalValue, max: 50, start: 19.12 });
+    const dec = document.querySelector('.js-decimal')
+    const initDec = new Powerange2(dec, { decimal: true, callback: displayDecimalValue, max: 50, start: 19.12 })
 
     function displayDecimalValue() {
-      document.getElementById('js-display-decimal').innerHTML = dec.value;
+      document.getElementById('js-display-decimal').innerHTML = dec.value
     }
 
     // Step.
-    var stp = document.querySelector('.js-step');
-    var initStp = new Powerange(stp, { start: 50, step: 10 });
+    const stp = document.querySelector('.js-step')
+    const initStp = new Powerange2(stp, { start: 50, step: 10 })
 
     // Hide range.
-    var hide = document.querySelector('.js-hiderange');
-    var initHideRange = new Powerange(hide, { hideRange: true, start: 70 });
+    const hide = document.querySelector('.js-hiderange')
+    const initHideRange = new Powerange2(hide, { hideRange: true, start: 70 })
 
     // Disabled.
-    var disabled = document.querySelector('.js-disabled');
-    var initDisabled = new Powerange(disabled, { disable: true, disabledOpacity: 0.75, start: 30 });
+    const disabled = document.querySelector('.js-disabled')
+    const initDisabled = new Powerange2(disabled, { disable: true, disabledOpacity: 0.75, start: 30 })
 
     // Vertical.
-    var vert = document.querySelector('.js-vertical');
-    var initVert = new Powerange(vert, { start: 80, vertical: true });
+    const vert = document.querySelector('.js-vertical')
+    const initVert = new Powerange2(vert, { start: 80, vertical: true })
 
     // Checking state.
     // On click.
-    var clickInput = document.querySelector('.js-check-click')
+    const clickInput = document.querySelector('.js-check-click')
       , clickButton = document.querySelector('.js-check-click-button')
-      , initClickInput = new Powerange(clickInput, { start: 20 });
+      , initClickInput = new Powerange2(clickInput, { start: 20 })
 
-    clickButton.addEventListener('click', function() {
-      alert(clickInput.value);
-    });
+    clickButton.addEventListener('click', () => {
+      alert(clickInput.value)
+    })
 
     // On change.
-    var changeInput = document.querySelector('.js-check-change')
-      , initChangeInput = new Powerange(changeInput, { start: 70 });
+    const changeInput = document.querySelector('.js-check-change')
+      , initChangeInput = new Powerange2(changeInput, { start: 70 })
 
-    changeInput.onchange = function() {
-      document.getElementById('js-display-change').innerHTML = changeInput.value;
-    };
+    changeInput.onchange = () => {
+      document.getElementById('js-display-change').innerHTML = changeInput.value
+    }
 
     // Callback.
-    var clbk = document.querySelector('.js-callback');
-    var initClbk = new Powerange(clbk, { callback: displayValue, start: 88 });
+    const clbk = document.querySelector('.js-callback')
+    const initClbk = new Powerange2(clbk, { callback: displayValue, start: 88 })
 
     function displayValue() {
-      document.getElementById('js-display-callback').innerHTML = clbk.value;
+      document.getElementById('js-display-callback').innerHTML = clbk.value
     }
 
     // Interacting with elements.
-    var opct = document.querySelector('.js-opacity');
-    var initOpct = new Powerange(opct, { callback: setOpacity, decimal: true, min: 0, max: 1, start: 1 });
+    const opct = document.querySelector('.js-opacity')
+    const initOpct = new Powerange2(opct, { callback: setOpacity, decimal: true, min: 0, max: 1, start: 1 })
 
     function setOpacity() {
-      document.querySelector('.js-change-opacity').style.opacity = opct.value;
+      document.querySelector('.js-change-opacity').style.opacity = opct.value
     }
   </script>
 </body>

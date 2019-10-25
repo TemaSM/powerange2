@@ -1,8 +1,8 @@
-![Powerange](http://i.imgur.com/dzcmnWS.jpg)
+![Powerange2](http://i.imgur.com/dzcmnWS.jpg)
 
 ## Description
 
-Powerange is a range slider control, inspired heavily by iOS 7 and the "Power Rangers" TV series. It is easily customizable, both by CSS and JavaScript. With it's many features, including changing color and overall style, switching between horizontal and vertical style, custom min, max and start values, custom step interval, displaying decimal values, displaying icons instead of min/max numbers, it is a really powerful UI tool to use on your website.
+Powerange2 is a range slider control, inspired heavily by iOS 7 and the "Power Rangers" TV series. It is easily customizable, both by CSS and JavaScript. With it's many features, including changing color and overall style, switching between horizontal and vertical style, custom min, max and start values, custom step interval, displaying decimal values, displaying icons instead of min/max numbers, it is a really powerful UI tool to use on your website.
 
 A great cross-browser solution, supporting: Google Chrome 14+, Mozilla Firefox 6.0+, Opera 11.6+, Safari 5+, IE 9+
 
@@ -10,34 +10,26 @@ Licensed under [The MIT License](http://opensource.org/licenses/MIT).
 
 ![Preview](http://i.imgur.com/21gwF47.jpg)
 
-If you like this module and you're a fan of iOS 7 style UI widgets, check out [Switchery](https://github.com/abpetkov/switchery).
-
 ## Installation
 
 ##### Standalone:
 
 ```html
-<link rel="stylesheet" href="dist/powerange.css" />
-<script src="dist/powerange.js"></script>
+<link rel="stylesheet" href="dist/powerange2.css" />
+<script src="dist/powerange2.js"></script>
 ```
 
-##### Component:
+##### npm:
 
 ```shell
-$ component install abpetkov/powerange
-```
-
-##### Bower:
-
-```shell
-$ bower install powerange
+npm install -S powerange2
 ```
 
 ## Usage
 
 ```js
-var elem = document.querySelector('.js-range');
-var init = new Powerange(elem);
+const elem = document.querySelector('.js-range')
+const init = new Powerange2(elem)
 ```
 
 Use the above for the standalone version.
@@ -48,18 +40,18 @@ Use the above for the standalone version.
 
 ```js
 defaults = {
-    callback      : function() {}
-  , decimal       : false
-  , disable       : false
-  , disableOpacity: 0.5
-  , hideRange     : false
-  , klass         : ''
-  , min           : 0
-  , max           : 100
-  , start         : null
-  , step          : null
-  , vertical      : false
-};
+  callback      : function() {},
+  decimal       : false,
+  disable       : false,
+  disableOpacity: 0.5,
+  hideRange     : false,
+  klass         : '',
+  min           : 0,
+  max           : 100,
+  start         : null,
+  step          : null,
+  vertical      : false,
+}
 ```
 
 - `callback` : function invoked on initialization and on slider handle movement
@@ -95,7 +87,7 @@ The sky is the limit.
 Changing your default `min`, `max` and `start` values is pretty easy. The start value has to be a number in your min-max interval, otherwise it takes the value of either `min` or `max`, depending on which is closer. Negative values are supported as well.
 
 ```js
-var init = new Powerange(elem, { min: 16, max: 256, start: 128 });
+const init = new Powerange2(elem, { min: 16, max: 256, start: 128 })
 ```
 
 ##### Decimal
@@ -103,7 +95,7 @@ var init = new Powerange(elem, { min: 16, max: 256, start: 128 });
 Display decimal number with 2 characters after the decimal point.
 
 ```js
-var init = new Powerange(elem, { decimal: true });
+const init = new Powerange2(elem, { decimal: true })
 ```
 
 ##### Slider step
@@ -111,7 +103,7 @@ var init = new Powerange(elem, { decimal: true });
 You can change the step with which the handle moves, using the `step` option.
 
 ```js
-var init = new Powerange(elem, { step: 10 });
+const init = new Powerange2(elem, { step: 10 })
 ```
 
 ##### Hide range values
@@ -119,7 +111,7 @@ var init = new Powerange(elem, { step: 10 });
 You can hide the min and max values, by using the `hideRange` option.
 
 ```js
-var init = new Powerange(elem, { hideRange: true });
+const init = new Powerange2(elem, { hideRange: true })
 ```
 
 ![Hidden values](http://i.imgur.com/TAw0O9e.png)
@@ -129,7 +121,7 @@ var init = new Powerange(elem, { hideRange: true });
 Disable the range slider and change it's default `disabledOpacity` if needeed.
 
 ```js
-var init = new Powerange(elem, { disable: true, disabledOpacity: 0.75 });
+const init = new Powerange2(elem, { disable: true, disabledOpacity: 0.75 })
 ```
 
 You can still give it a value, by changing the `start` option.
@@ -138,10 +130,10 @@ You can still give it a value, by changing the `start` option.
 
 ##### Horizontal and vertical slider
 
-The default Powerange slider is horizontal. However, you can make it vertical, by setting `vertical: true`.
+The default Powerange2 slider is horizontal. However, you can make it vertical, by setting `vertical: true`.
 
 ```js
-var init = new Powerange(elem, { vertical: true });
+const init = new Powerange2(elem, { vertical: true })
 ```
 
 ![Vertical slider](http://i.imgur.com/JNMJQve.png)
@@ -153,22 +145,22 @@ Check the current value of the range slider, by looking at the value of the text
 On click:
 
 ```js
-var clickInput = document.querySelector('.js-check-click')
-  , clickButton = document.querySelector('.js-check-click-button');
+const clickInput = document.querySelector('.js-check-click'),
+      clickButton = document.querySelector('.js-check-click-button')
 
-clickButton.addEventListener('click', function() {
-  alert(clickInput.value);
-});
+clickButton.addEventListener('click', () => {
+  alert(clickInput.value)
+})
 ```
 
 On change:
 
 ```js
-var changeInput = document.querySelector('.js-check-change');
+const changeInput = document.querySelector('.js-check-change')
 
-changeInput.onchange = function() {
-  alert(changeInput.value);
-};
+changeInput.onchange = () => {
+  alert(changeInput.value)
+}
 ```
 
 ##### Callback
@@ -176,11 +168,11 @@ changeInput.onchange = function() {
 The callback function is invoked on slider initialization and on slider handle movement. It's very appropriate for displaying the current value in another element.
 
 ```js
-var elem = document.querySelector('.js-range');
-var init = new Powerange(elem, { callback: displayValue });
+const elem = document.querySelector('.js-range')
+const init = new Powerange2(elem, { callback: displayValue })
 
 function displayValue() {
-  document.getElementById('display-box').innerHTML = elem.value;
+  document.getElementById('display-box').innerHTML = elem.value
 }
 ```
 
@@ -191,11 +183,11 @@ function displayValue() {
 Just a simple example of how you can interact with an element, when changing the slider value.
 
 ```js
-var elem = document.querySelector('.js-range');
-var init = new Powerange(elem, { callback: setOpacity, decimal: true, min: 0, max: 1 });
+const elem = document.querySelector('.js-range')
+const init = new Powerange2(elem, { callback: setOpacity, decimal: true, min: 0, max: 1 })
 
 function setOpacity() {
-  document.querySelector('.target').style.opacity = elem.value;
+  document.querySelector('.target').style.opacity = elem.value
 }
 ```
 
@@ -212,7 +204,7 @@ $ grunt build
 Add the following code before the initialization:
 
 ```js
-var Powerange = require('powerange');
+const Powerange2 = require('powerange2')
 ```
 
 Make sure you're using the `build/build.js` and `build/build.css` files and you're ready.
@@ -229,15 +221,11 @@ There are some useful commands you can use:
 
 `$ grunt clean` - empties the contents of `build/` and `dist/` folders
 
-## Contact
-
-If you like this component, share your appreciation by following me in [Twitter](https://twitter.com/abpetkov), [GitHub](https://github.com/abpetkov) or [Dribbble](http://dribbble.com/apetkov).
-
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Alexander Petkov
+Copyright (c) 2019 Artem Smirnov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
